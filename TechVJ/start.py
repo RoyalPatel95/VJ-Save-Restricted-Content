@@ -63,7 +63,7 @@ async def send_start(client: Client, message: Message):
     buttons = [[
         InlineKeyboardButton("❣️ Developer", url = "https://t.me/katiyaransh")
     ],[
-        InlineKeyboardButton('🔍 Instagram', url='https://www.instagram.com/_a_ktyr_'),
+        InlineKeyboardButton('🔍 Instagram', url='https://www.instagram.com/kurmianshkatiyar'),
         InlineKeyboardButton('🤖 movie channel', url='https://t.me/hindi_newhdmovie')
     ]]
     reply_markup = InlineKeyboardMarkup(buttons)
@@ -222,7 +222,7 @@ async def handle_private(client: Client, acc, message: Message, chatid: int, msg
             if ERROR_MESSAGE == True:
                 await client.send_message(message.chat.id, f"Error: {e}", reply_to_message_id=message.id, parse_mode=enums.ParseMode.HTML)
         if ph_path != None: os.remove(ph_path)
-
+        await asyncio.sleep(5)
     elif "Animation" == msg_type:
         try:
             await client.send_animation(chat, file, reply_to_message_id=message.id, parse_mode=enums.ParseMode.HTML)
